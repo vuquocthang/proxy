@@ -65,7 +65,7 @@ def _cao_sslproxies_org():
                 ip = row.find_elements_by_tag_name('td')[0].get_attribute('innerHTML').strip()
                 port = row.find_elements_by_tag_name('td')[1].get_attribute('innerHTML').strip()
 
-                print('ip|port|country_code|country_name : {}|{}|{}|{}'.format(ip, port, country_code, country_name))
+                print('ip|port : {}|{}'.format(ip, port))
 
                 _create_proxy({
                     'ip': ip,
