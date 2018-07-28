@@ -69,7 +69,8 @@ def _cao_sslproxies_org():
 
                 _create_proxy({
                     'ip': ip,
-                    'port': port
+                    'port': port,
+                    'status': 1
                 })
             except Exception as e:
                 print(e)
@@ -114,7 +115,8 @@ def _cao_spys_one():
 
                 _create_proxy({
                     'ip': ip,
-                    'port': port
+                    'port': port,
+                    'status': 1
                 })
             except Exception as e:
                 print(e)
