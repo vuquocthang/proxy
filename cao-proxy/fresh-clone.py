@@ -39,26 +39,30 @@ def _check(clone):
             'https' : '{}:{}'.format(clone['ip'].strip(), clone['port'].strip())
         }).json()
 
-        if r['ip'].strip() == proxy['ip'].strip():
-            update_proxy(proxy, 1)
+        if r['ip'].strip() == clone['ip'].strip():
             return True
         else:
-            update_proxy(proxy, 0)
+            proxy = requests.get("{}/proxy".format(url)).json()
+
+            update_clone(clone, proxy['ip'].strip(), proxy['port'].strip())
             return False
     except Exception as e:
         print(e)
-        update_proxy(proxy, 0)
+        proxy = requests.get("{}/proxy".format(url)).json()
+        update_clone(clone, proxy['ip'].strip(), proxy['port'].strip())
         return False
 
 
-def update_clone(clone):
-    print('update proxy : {} with status : {}'.format(proxy, status))
+def update_clone(clone, ip, port):
+    print("update clone : {}".format(clone['id']))
 
-    requests.put("{}/clone/{}".format(url, proxy['id']), {
-        'status': status
+    requests.put("{}/clone/{}".format(url, clone['id']), {
+        'ip': ip,
+        'port': port
     })
 
 _create_workers()
-for proxy in proxies:
-    q.put(proxy)
+
+for clone in clones:
+    q.put(clone)
 q.join()

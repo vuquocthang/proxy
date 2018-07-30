@@ -5,7 +5,8 @@ import threading
 import sys
 import random
 import logging
-logging.basicConfig(filename='/home/toolnuoi999.tk/proxy/cao-proxy/fresh-proxy.log',level=logging.DEBUG)
+import os
+logging.basicConfig(filename=os.path.abspath('fresh-proxy.log'),level=logging.DEBUG)
 
 logging.info("Begin fresh")
 

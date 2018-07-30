@@ -108,8 +108,8 @@ def _cao_spys_one():
             try:
                 raw = row.find_elements_by_tag_name("td")[0].text
 
-                ip = raw.split(" ")[1].split(":")[0]
-                port = raw.split(" ")[1].split(":")[1]
+                ip = raw.split(" ")[1].split(":")[0].strip()
+                port = raw.split(" ")[1].split(":")[1].strip()
 
                 print('ip|port : {}|{}'.format(ip, port))
 
