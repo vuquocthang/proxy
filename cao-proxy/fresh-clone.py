@@ -5,9 +5,9 @@ import threading
 import sys
 import random
 import logging
-logging.basicConfig(filename='fresh-proxy.log',level=logging.DEBUG)
+logging.basicConfig(filename=os.path.abspath('fresh-clone.log'),level=logging.DEBUG)
 
-logging.info("Begin fresh")
+logging.info("===============> Begin fresh clone")
 
 url = "http://toolnuoi999.tk/api"
 threads = 5
