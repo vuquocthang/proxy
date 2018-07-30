@@ -1,4 +1,4 @@
-import chilkat
+#import chilkat
 import requests
 from queue import Queue
 import threading
