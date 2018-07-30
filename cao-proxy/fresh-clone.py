@@ -5,6 +5,8 @@ import threading
 import sys
 import random
 import logging
+import os
+
 logging.basicConfig(filename=os.path.abspath('fresh-clone.log'),level=logging.DEBUG)
 
 logging.info("===============> Begin fresh clone")
