@@ -13,6 +13,10 @@ from selenium.webdriver.common.keys import Keys
 from pyvirtualdisplay import Display
 from xvfbwrapper import Xvfb
 
+logging.basicConfig(filename=os.path.abspath('cao-proxy.log'),level=logging.DEBUG)
+
+logging.info("===============> Begin crawl proxy")
+
 _api_url = "http://toolnuoi999.tk/api"
 
 def _init_driver():
