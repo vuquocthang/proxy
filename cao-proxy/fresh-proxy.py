@@ -1,16 +1,16 @@
-import chilkat
+#import chilkat
 import requests
 from queue import Queue
 import threading
 import sys
 import random
 import logging
-logging.basicConfig(filename='fresh-proxy.log',level=logging.DEBUG)
+logging.basicConfig(filename='/home/toolnuoi999.tk/proxy/cao-proxy/fresh-proxy.log',level=logging.DEBUG)
 
 logging.info("Begin fresh")
 
 url = "https://facebook.pagehay.site/api"
-threads = 2
+threads = 5
 proxies = requests.get("{}/proxies".format(url)).json()
 
 q = Queue()
