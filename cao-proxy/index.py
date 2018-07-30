@@ -12,6 +12,7 @@ import requests
 from selenium.webdriver.common.keys import Keys
 from pyvirtualdisplay import Display
 from xvfbwrapper import Xvfb
+import logging
 
 logging.basicConfig(filename=os.path.abspath('cao-proxy.log'),level=logging.DEBUG)
 
