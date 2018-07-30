@@ -1,4 +1,3 @@
-#import chilkat
 import requests
 from queue import Queue
 import threading
@@ -25,8 +24,8 @@ def _create_workers():
 
 def _work():
     while True:
-        proxy = q.get()
-        _job(proxy)
+        clone = q.get()
+        _job(clone)
         q.task_done()
 
 def _job(clone):
